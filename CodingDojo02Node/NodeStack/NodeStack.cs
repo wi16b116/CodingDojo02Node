@@ -22,5 +22,27 @@ namespace CodingDojo02Node.NodeStack
                 currentNode = temp;
             }
         }
+
+        public T Pop()
+        {
+            if (currentNode != null)
+            {
+                T temp = currentNode.ValueOfNode;
+                currentNode = currentNode.NextNode;
+                return temp;
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+        }
+
+        public T Peek()
+        {
+            if (currentNode != null)
+            {
+                return currentNode.ValueOfNode;
+            }
+        }
     }
 }
